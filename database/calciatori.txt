@@ -1,0 +1,163 @@
+1;Budini;3;16
+2;Pietro Bosi;3;16
+3;Leonardo Vella;0;16
+4;Emanuele Scandellari;0;16
+5;Emanuele Daisse;1;16
+6;Samuele Contessi;0;16
+7;Matteo Galli;0;18
+8;Francesco Fazi;4;18
+9;Filippo Poverini;0;18
+10;Filippo Pattuelli;0;18
+11;Nicolò Sonnessa;0;18
+12;Matteo Minardi;0;18
+13;Orlando Andrini;0;18
+14;Samuele Paci;0;21
+15;Luigi Cappelli;0;21
+16;Ascanio Finetto;0;21
+17;Marco Franchini;0;21
+18;Klaiver Islamai;0;21
+19;Tommaso Maldolesi;0;21
+20;Mattia Malucelli;0;21
+21;Lorenzo Pleiadi;0;21
+22;Pietro Bazzi;0;27
+23;Matteo Cavalieri;0;27
+24;Gianmaria Pasi;0;27
+25;Alessandro Marri;0;27
+26;Jacopo D'elia;0;27
+27;Gabriele Barbanti;0;9
+28;Manuel Andrini;0;9
+29;Enrico Cavallari;0;9
+30;Lorenzo Terdoslavi;0;9
+31;Riccardo Bassi;0;9
+32;Francesco Cavallari;0;9
+33;Alessandro Naldi;0;9
+34;Jacopo Torre;0;9
+35;Alessandro Mazza;0;15
+36;Andrea Venturini;0;15
+37;Giuseppe Grosso;3;15
+38;Salvatore Santalucia;1;15
+39;Corrado Magliocco;0;15
+40;Christian Rosano;0;15
+41;Matteo Graziani;0;15
+42;Giorgia Vandi;0;12
+43;Elena Cavassi;0;12
+44;Ginecra Frontino;0;12
+45;Sofia Tarroni;0;12
+46;Alessandra Bagioni;0;12
+47;Alyssa Lelli;0;12
+48;Benedetta Caruso;0;12
+49;Lorenzo Pini;0;17
+50;Ettore Rinaldi;0;17
+51;Federico Tapinassi;0;17
+52;Mattia Polani;0;17
+53;Mattia Santarelli;0;17
+54;Edoardo Succi;0;17
+55;Federico Orlando;0;17
+56;Ascanio Serrai;0;17
+57;Alessandro Gismondi;0;6
+58;Tommaso Bolognesi;0;6
+59;Diego Cevolani;0;6
+60;Filippo Tassinari;0;6
+61;pasquiii._ ;0;6
+62;edo_pranz0 ;0;6
+63;Niccolò Leonardi;0;6
+64;Elia Argnani;0;13
+65;Jacopo Martini;0;13
+66;Andrea Bambi;0;13
+67;Alessandro De Donno;0;13
+68;Marco Mari;0;13
+69;Lorenzo Placci;0;13
+70;Filippo Padoan;0;13
+71;Alberto Moia;0;26
+72;Gian Marco Castellani;0;26
+73;Luca Della Valle;0;26
+74;Paolo Alberani;0;26
+75;Andrea Spignoli;1;26
+76;Simone Palatella;1;26
+77;Lorenzo Doria;0;26
+78;Davide Rasponi;3;19
+79;Filippo Maria Serafini;0;19
+80;Giuseppe Porta;0;19
+81;Federico Tassinari;0;19
+82;Francesco Freddi;0;20
+83;Matthew Fantini;0;20
+84;Giovanni Santoro;0;20
+85;Nicolò Stringa;0;20
+86;Victor Fioravanti;0;20
+87;Thomas Petretti;0;20
+88;Grei Sulejmani;0;20
+89;Gabriele Franchini;0;20
+90;Gianpaolo Romeo;0;22
+91;David Kadji;0;22
+92;Giovanni Rametta;0;22
+93;Leonardo Filipponi;0;22
+94;Giovanni Casadio;0;22
+95;Giorgio Tallevi;0;22
+96;Federico Zampiga;0;22
+97;Gianluca Dimella;0;4
+98;Salvatore Crispi;0;4
+99;Raffaele Randi;0;4
+100;Massimo Bianchi;0;4
+101;Ettore Mancanelli;0;4
+102;Simone Di Tizio;0;4
+103;rayan_.re77;0;4
+104;Giacomo Parmiani;0;23
+105;Christian Curci;0;23
+106;Francesco Vicari;0;23
+107;Leonardo Dal Pozzo;0;23
+108;Giacomo Angiolini;0;23
+109;Elia Manservisi;0;23
+110;Diego Zaccherini;0;23
+111;Alessandro Bergonzini;0;23
+112;Manuel Noferini;0;24
+113;Federico Guli;0;24
+114;Mattia Dal Pozzo;0;24
+115;Samuel Babini;0;24
+116;Giacomo Solaroli;0;24
+117;Simone Beleffi;0;24
+118;Leonardo Bezzi;0;25
+119;Telemaco Costantini;0;25
+120;lilpromis_;2;25
+121;Pietro Galletti;0;25
+122;Filippo Greggio;1;25
+123;Filippo Molducci;0;25
+124;Mattia Romagnoli;0;25
+125;Gabriele Miserocchi;0;3
+126;Alberto Giovannini;0;3
+127;Christian Filippini;0;3
+128;Lorenzo Marsiglio;0;3
+129;Buzzi;0;3
+130;Alberto Dello Russo;0;1
+131;Alessandro Zannoni;0;1
+132;Luca Marcucci;0;1
+133;Lorenzo Rossetti;0;1
+134;Giulio Cerrato;0;10
+135;Brigliadori;0;10
+136;Luca Santini;0;10
+137;Giulio Papale;0;14
+138;Leo Stecchi;0;14
+139;Tommaso Gori;0;14
+140;Lorenzo Savelli;0;14
+141;Giacomo Suprani;0;14
+142;Andrea Neri;0;14
+143;Matteo Aresu;0;14
+144;Alessandro Bertini;0;1
+145;Leonardo Muratori;0;1
+146;Gennaro Palazzo;0;1
+147;Tommaso Fervari;0;11
+148;Matteo Utili;0;11
+149;Luca Terzo;0;11
+150;Christian Zarri;0;11
+151;Luca Forastieri;0;11
+152;Giacomo Pazzi;0;11
+153;Luca Tonini;0;11
+154;Vernarelli;0;11
+155;Lorenzo Babini;0;2
+156;Leonardo Pullano;0;2
+157;Guerrini;0;2
+158;Francesco Zampiga;0;7
+159;Carlo Travanini;0;7
+160;Leonardo Palmeri;0;8
+161;Alessandro Ruggeri;0;8
+162;Beatrice Pantarotto;0;21
+163;Edige Oussa;0;26
