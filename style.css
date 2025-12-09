@@ -23,6 +23,7 @@ h1 {
     text-align: center;
 }
 
+/* NAVBAR */
 .navbar {
     top: 0;
     background-color: rgba(51, 51, 51, 0.95);
@@ -30,7 +31,7 @@ h1 {
     justify-content: center;
     align-items: center;
     height: 60px;
-    padding: 0 20px;
+    padding: 0 10px;
     z-index: 1000;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
@@ -38,12 +39,12 @@ h1 {
 .navbar a {
     color: #f2f2f2;
     text-decoration: none;
-    padding: 0 15px;
+    padding: 0 10px;
     line-height: 60px;
     font-size: 16px;
     transition: background-color 0.3s, color 0.3s;
     border-radius: 5px;
-    margin-right: 10px;
+    margin-right: 5px;
 }
 
 .navbar a:hover {
@@ -60,8 +61,10 @@ h1 {
     flex: 1;
 }
 
+/* TABELLA */
 .games-table {
-    width: 600px;
+    width: 90%;
+    max-width: 600px;
     border-collapse: collapse;
     background: white;
     border-radius: 10px;
@@ -74,15 +77,15 @@ h1 {
     text-align: center;
     background: #2e6bf9;
     color: white;
-    padding: 12px;
-    font-size: 18px;
+    padding: 10px;
+    font-size: 16px;
 }
 
 .games-table td {
     text-align: center;
-    padding: 12px;
+    padding: 10px;
     border-bottom: 1px solid #ddd;
-    font-size: 17px;
+    font-size: 15px;
 }
 
 .games-table tr:last-child td {
@@ -93,6 +96,7 @@ h1 {
     background: #f0f3ff;
 }
 
+/* BOTTONI */
 button {
     padding: 10px 20px;
     background: #2e6bf9;
@@ -117,11 +121,13 @@ button:active {
     display: none;
 }
 
+/* CARD SQUADRE */
 .teams-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 15px;
     max-width: 900px;
+    width: 90%;
     margin: 30px auto;
 }
 
@@ -143,21 +149,22 @@ button:active {
 }
 
 .team-logo img {
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
     object-fit: contain;
     margin-bottom: 10px;
 }
 
 .team-name {
     font-weight: bold;
-    font-size: 16px;
+    font-size: 15px;
 }
 
 .team-card table tr td {
     padding: 4px 0;
 }
 
+/* FOOTER */
 footer {
     background-color: rgba(46, 107, 249, 0.9);
     color: white;
@@ -170,4 +177,58 @@ footer {
     color: white;
     text-decoration: underline;
     margin: 0 5px;
+}
+
+/* RESPONSIVE MOBILE */
+@media (max-width: 600px) {
+
+    .navbar {
+        flex-wrap: wrap;
+        height: auto;
+        padding: 10px;
+    }
+
+    .navbar a {
+        margin: 5px 5px;
+        font-size: 14px;
+        padding: 5px 8px;
+        line-height: normal;
+    }
+
+    .games-table th,
+    .games-table td {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: 20px;
+        padding: 8px;
+    }
+
+    .team-logo img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .team-name {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 400px) {
+
+    .navbar a {
+        font-size: 12px;
+        padding: 4px 6px;
+    }
+
+    .games-table {
+        width: 95%;
+    }
+
+    button {
+        width: 100%;
+        padding: 12px;
+    }
 }
