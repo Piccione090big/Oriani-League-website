@@ -182,53 +182,68 @@ footer {
 /* RESPONSIVE MOBILE */
 @media (max-width: 600px) {
 
-    .navbar {
-        flex-wrap: wrap;
-        height: auto;
-        padding: 10px;
-    }
-
-    .navbar a {
-        margin: 5px 5px;
-        font-size: 14px;
-        padding: 5px 8px;
-        line-height: normal;
-    }
-
-    .games-table th,
-    .games-table td {
-        padding: 8px;
-        font-size: 14px;
-    }
-
-    h1 {
-        font-size: 20px;
-        padding: 8px;
-    }
-
-    .team-logo img {
-        width: 50px;
-        height: 50px;
-    }
-
-    .team-name {
-        font-size: 14px;
-    }
-}
-
-@media (max-width: 400px) {
-
-    .navbar a {
-        font-size: 12px;
-        padding: 4px 6px;
-    }
-
     .games-table {
-        width: 95%;
+        width: 100%;
+        margin: 10px 0;
+        border-radius: 0;
+        box-shadow: none;
     }
 
-    button {
+    .marcatori-container {
         width: 100%;
-        padding: 12px;
+        margin-top: 20px;
+    }
+
+    .teams-container {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        width: 100%;
+        margin: 20px 0;
+    }
+
+    .team-card {
+        width: 100%;
+        border-radius: 0;
+    }
+
+    .gironi-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 20px;
+    }
+
+    .girone-card {
+        width: 100%;
+        border-radius: 0;
+    }
+
+    .squadra-container {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        width: 100%;
+    }
+
+    .classifica-table,
+    .games-table {
+        width: 100%;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .girone-container {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        width: 100%;
+    }
+
+    .classifica-table,
+    .games-table {
+        width: 100%;
+        border-radius: 0;
+        box-shadow: none;
     }
 }

@@ -56,14 +56,14 @@
 56;Ascanio Serrai;0;17
 57;Alessandro Gismondi;0;6
 58;Tommaso Bolognesi;0;6
-59;Diego Cevolani;0;6
+59;Diego Cevolani;2;6
 60;Filippo Tassinari;0;6
-61;pasquiii._ ;0;6
+61;Pasquale Alborino;2;6
 62;edo_pranz0 ;0;6
 63;Niccolò Leonardi;0;6
-64;Elia Argnani;0;13
+64;Elia Argnani;2;13
 65;Jacopo Martini;0;13
-66;Andrea Bambi;0;13
+66;Andrea Bambi;1;13
 67;Alessandro De Donno;0;13
 68;Marco Mari;0;13
 69;Lorenzo Placci;0;13
@@ -122,10 +122,10 @@
 122;Filippo Greggio;1;25
 123;Filippo Molducci;0;25
 124;Mattia Romagnoli;0;25
-125;Gabriele Miserocchi;0;3
+125;Gabriele Miserocchi;1;3
 126;Alberto Giovannini;0;3
-127;Christian Filippini;0;3
-128;Lorenzo Marsiglio;0;3
+127;Christian Filippini;1;3
+128;Lorenzo Marsiglio;1;3
 129;Buzzi;0;3
 130;Alberto Dello Russo;0;1
 131;Alessandro Zannoni;0;1
@@ -136,16 +136,16 @@
 136;Luca Santini;0;10
 137;Giulio Papale;0;14
 138;Leo Stecchi;0;14
-139;Tommaso Gori;0;14
+139;Tommaso Gori;2;14
 140;Lorenzo Savelli;0;14
-141;Giacomo Suprani;0;14
+141;Giacomo Suprani;1;14
 142;Andrea Neri;0;14
-143;Matteo Aresu;0;14
+143;Matteo Aresu;1;14
 144;Alessandro Bertini;0;1
 145;Leonardo Muratori;0;1
 146;Gennaro Palazzo;0;1
-147;Tommaso Fervari;0;11
-148;Matteo Utili;0;11
+147;Tommaso Fervari;1;11
+148;Matteo Utili;1;11
 149;Luca Terzo;0;11
 150;Christian Zarri;0;11
 151;Luca Forastieri;0;11
@@ -161,3 +161,6 @@
 161;Alessandro Ruggeri;0;8
 162;Beatrice Pantarotto;0;21
 163;Edige Oussa;0;26
+164;Brogna;1;3
+165;Gentili;5;8
+166;Cabarletti;3;8

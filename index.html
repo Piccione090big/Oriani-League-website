@@ -79,7 +79,7 @@
         <div style="display: flex; gap: 40px; max-width: 1200px; margin: 20px auto;">
             <div style="flex: 1; text-align: center;">
                 <h2>Partite</h2>
-                <button id="hideShow" onclick="HideShow()">Nascondi partite già giocate</button>
+                <button id="hideShow" onclick="HideShow()">Mostra tutte le partite</button>
                 <table id="gamesTable" class="games-table">
                     <tr>
                         <th>Squadra 1</th>
@@ -486,7 +486,14 @@
     `;
     }
 
+    let showAllGames = false;
+    let allGamesCache = [];
+    let allSquadreCache = [];
+
     function renderGames(games, squadre) {
+        allGamesCache = games;
+        allSquadreCache = squadre;
+
         const table = document.getElementById("gamesTable");
         table.innerHTML = `
         <tr>
@@ -499,9 +506,17 @@
         </tr>
     `;
 
-        games.sort((a, b) => new Date(a.orario) - new Date(b.orario));
+        const now = new Date();
+        const oneWeekAgo = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
+        const nextWeek = new Date(now.getTime() + 3 * 24 * 60 * 60 * 1000);
 
-        games.forEach(g => {
+        let list = showAllGames
+            ? games
+            : games.filter(g => new Date(g.orario) >= oneWeekAgo && new Date(g.orario) <= nextWeek);
+
+        list.sort((a, b) => new Date(a.orario) - new Date(b.orario));
+
+        list.forEach(g => {
             const team1 = squadre.find(s => s.id === g.id1)?.nome ?? "???";
             const team2 = squadre.find(s => s.id === g.id2)?.nome ?? "???";
 
@@ -562,20 +577,12 @@
     }
 
     function HideShow() {
-        const btn = document.getElementById("hideShow");
-        const rows = document.querySelectorAll("tr.played");
+        showAllGames = !showAllGames;
 
-        const hide = "Nascondi partite già giocate";
-        const show = "Mostra partite già giocate";
+        document.getElementById("hideShow").innerHTML =
+            showAllGames ? "Mostra ultime partite" : "Mostra tutte le partite";
 
-        const hideGames = btn.innerHTML === hide;
-
-        rows.forEach(r => {
-            if (hideGames) r.classList.add("hidden");
-            else r.classList.remove("hidden");
-        });
-
-        btn.innerHTML = hideGames ? show : hide;
+        renderGames(allGamesCache, allSquadreCache);
     }
 
     let showingTop20 = false;
