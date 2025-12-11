@@ -23,7 +23,6 @@ h1 {
     text-align: center;
 }
 
-/* NAVBAR */
 .navbar {
     top: 0;
     background-color: rgba(51, 51, 51, 0.95);
@@ -61,7 +60,13 @@ h1 {
     flex: 1;
 }
 
-/* TABELLA */
+.columns {
+    display: flex;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
 .games-table {
     width: 90%;
     max-width: 600px;
@@ -96,7 +101,6 @@ h1 {
     background: #f0f3ff;
 }
 
-/* BOTTONI */
 button {
     padding: 10px 20px;
     background: #2e6bf9;
@@ -121,7 +125,6 @@ button:active {
     display: none;
 }
 
-/* CARD SQUADRE */
 .teams-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
@@ -164,7 +167,6 @@ button:active {
     padding: 4px 0;
 }
 
-/* FOOTER */
 footer {
     background-color: rgba(46, 107, 249, 0.9);
     color: white;
@@ -179,8 +181,7 @@ footer {
     margin: 0 5px;
 }
 
-/* RESPONSIVE MOBILE */
-@media (max-width: 600px) {
+@media (max-width: 850px) {
 
     .games-table {
         width: 100%;
@@ -195,16 +196,18 @@ footer {
     }
 
     .teams-container {
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-        width: 100%;
-        margin: 20px 0;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 15px 60px;
+        width: 90%;
+        max-width: 900px;
+        margin: 20px auto;
+        justify-items: center;
     }
 
     .team-card {
         width: 100%;
-        border-radius: 0;
+        border-radius: 10px;
     }
 
     .gironi-container {
@@ -245,5 +248,14 @@ footer {
         width: 100%;
         border-radius: 0;
         box-shadow: none;
+    }
+
+    .columns {
+        display: flex;
+        flex-direction: column;
+        max-width: 850px;
+        margin: 20px auto;
+        gap: 40px;
+        align-items: center;
     }
 }
