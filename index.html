@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
     <title>Oriani League</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -76,7 +76,7 @@
             <a href="?p=gironi">Gironi</a>
         </div>
 
-        <div style="display: flex; gap: 40px; max-width: 1200px; margin: 20px auto;">
+        <div class="columns">
             <div style="flex: 1; text-align: center;">
                 <h2>Partite</h2>
                 <button id="hideShow" onclick="HideShow()">Mostra tutte le partite</button>
@@ -219,8 +219,7 @@
             Girone ${girone.nome}
         </p>
 
-        <div style="display:flex; gap:40px; max-width:1200px; margin:0 auto;">
-
+        <div class="columns">
             <div style="flex:1;">
                 <h2 style="text-align:center;">Classifica Girone</h2>
                 <table style="width:100%; border-collapse: collapse; text-align: center;">
@@ -425,7 +424,7 @@
             </a>
         </div>
         <h2 style="text-align:center;">${girone.nome}</h2>
-        <div style="display:flex; gap:40px; max-width:1200px; margin:0 auto;">
+        <div class="columns" ">
             <div style="flex:1;">
                 <h2 style="text-align:center;">Classifica</h2>
                 <table style="width:100%; border-collapse: collapse; border: solid 1px black; text-align:center;">
