@@ -41,7 +41,7 @@
 41;Matteo Graziani;0;15
 42;Giorgia Vandi;1;12
 43;Elena Cavassi;0;12
-44;Ginecra Frontino;1;12
+44;Ginevra Frontino;1;12
 45;Sofia Tarroni;0;12
 46;Alessandra Bagioni;0;12
 47;Alyssa Lelli;0;12
