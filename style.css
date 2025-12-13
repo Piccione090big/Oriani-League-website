@@ -185,26 +185,29 @@ footer {
 
     .games-table {
         width: 100%;
-        table-layout: fixed;
         margin: 10px auto;
         border-radius: 8px;
         box-shadow: none;
     }
 
-    .games-table th,
-    .games-table td {
+    #gamesTable {
+        table-layout: fixed;
+    }
+
+    #gamesTable th,
+    #gamesTable td {
         padding: 5px 2px;
         word-wrap: break-word;
         overflow-wrap: break-word;
     }
 
-    .games-table th:nth-child(3), .games-table td:nth-child(3) {
+    #gamesTable th:nth-child(3), #gamesTable td:nth-child(3) {
         width: 5px;
         padding: 0;
     }
 
-    .games-table th:nth-child(2), .games-table td:nth-child(2),
-    .games-table th:nth-child(4), .games-table td:nth-child(4) {
+    #gamesTable th:nth-child(2), #gamesTable td:nth-child(2),
+    #gamesTable th:nth-child(4), #gamesTable td:nth-child(4) {
         width: 30px;
         padding: 0;
     }
@@ -269,3 +272,4 @@ footer {
         gap: 40px;
     }
 }
+
