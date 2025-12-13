@@ -185,9 +185,28 @@ footer {
 
     .games-table {
         width: 100%;
-        margin: 10px 0;
-        border-radius: 0;
+        table-layout: fixed;
+        margin: 10px auto;
+        border-radius: 8px;
         box-shadow: none;
+    }
+
+    .games-table th,
+    .games-table td {
+        padding: 5px 2px;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+
+    .games-table th:nth-child(3), .games-table td:nth-child(3) {
+        width: 5px;
+        padding: 0;
+    }
+
+    .games-table th:nth-child(2), .games-table td:nth-child(2),
+    .games-table th:nth-child(4), .games-table td:nth-child(4) {
+        width: 30px;
+        padding: 0;
     }
 
     .marcatori-container {
@@ -229,8 +248,7 @@ footer {
         width: 100%;
     }
 
-    .classifica-table,
-    .games-table {
+    .classifica-table {
         width: 100%;
         border-radius: 0;
         box-shadow: none;
@@ -243,19 +261,11 @@ footer {
         width: 100%;
     }
 
-    .classifica-table,
-    .games-table {
-        width: 100%;
-        border-radius: 0;
-        box-shadow: none;
-    }
-
     .columns {
         display: flex;
         flex-direction: column;
         max-width: 850px;
         margin: 20px auto;
         gap: 40px;
-        align-items: center;
     }
 }
