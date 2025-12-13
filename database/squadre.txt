@@ -6,10 +6,10 @@
 6;1;3;-10;Mango United
 7;2;1;0;Cocco FC
 8;2;3;5;Paguri
-9;2;6;9;Sol# FC
+9;2;9;18;Sol# FC
 10;2;0;-22;KFC
 11;2;7;16;Sbambo FC
-12;2;0;-8;Gattoparde
+12;2;0;-17;Gattoparde
 13;3;3;7;Ifty Boys
 14;3;4;1;AC Fea
 15;3;1;-11;Chiringuito FC
@@ -18,10 +18,10 @@
 18;4;4;1;Discepoli di Pol
 19;4;0;-14;Team Broglio
 20;4;0;0;Greisparrow
-21;4;4;10;Fairtest FC
-22;4;3;3;Pink Panters
-23;5;3;9;Toma-sturbato FC
-24;5;6;37;Hog Riders
-25;5;3;-8;SSC Zaza
+21;4;7;12;Fairtest FC
+22;4;3;1;Pink Panters
+23;5;4;9;Toma-sturbato FC
+24;5;7;37;Hog Riders
+25;5;6;-5;SSC Zaza
 26;5;0;-18;Los Mahukpegos
-27;5;0;-20;LVPO LVCIVS
+27;5;0;-23;LVPO LVCIVS
