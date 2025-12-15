@@ -209,9 +209,8 @@
         <h2 style="text-align:center;">${squadra.nome}</h2>
 
         <div style="text-align:center;">
-            <img src="images/logo-placeholder.png"
-                 alt="${squadra.nome} Logo"
-                 style="width:150px; height:150px;">
+            <img src="./images/${squadra['nome'].toLowerCase().replaceAll(' ', '').replaceAll('#', '')}.jpg" alt="${squadra.nome} Logo"
+            onerror="this.onerror=null; this.src='./images/logo-placeholder.png';" style="width:150px; height:150px;">
         </div>
 
         <h2 style="text-align:center; margin-top:20px;">Informazioni Squadra</h2>
