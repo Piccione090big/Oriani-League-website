@@ -129,12 +129,13 @@
         const container = document.getElementById("teamsContainer");
 
         squads.forEach(t => {
+            console.log(t['nome'].toLowerCase().replaceAll(' ', '').replaceAll('#', ''))
             const el = document.createElement("a");
             el.href = `?p=squadra&id=${t.id}`;
             el.className = "team-card";
             el.innerHTML = `
             <div class="team-logo">
-                <img src="./images/logo-placeholder.png" alt="${t.nome} Logo">
+                <img src="./images/${t['nome'].toLowerCase().replaceAll(' ', '').replaceAll('#', '')}.jpg" alt="${t.nome} Logo" onerror="this.onerror=null; this.src='./images/logo-placeholder.png';">
             </div>
             <div class="team-name">${t.nome}</div>
         `;
@@ -494,20 +495,10 @@
         allSquadreCache = squadre;
 
         const table = document.getElementById("gamesTable");
-        table.innerHTML = `
-        <tr>
-            <th>Squadra 1</th>
-            <th>Gol</th>
-            <th>-</th>
-            <th>Gol</th>
-            <th>Squadra 2</th>
-            <th>Data</th>
-        </tr>
-    `;
 
         const now = new Date();
-        const oneWeekAgo = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
-        const nextWeek = new Date(now.getTime() + 3 * 24 * 60 * 60 * 1000);
+        const oneWeekAgo = new Date(now.getTime() - 2 * 24 * 60 * 60 * 1000);
+        const nextWeek = new Date(now.getTime() + 7 * 24 * 60 * 60 * 1000);
 
         let list = showAllGames
             ? games
@@ -573,6 +564,8 @@
         `;
             table.appendChild(tr);
         });
+
+        showTop20()
     }
 
     function HideShow() {
