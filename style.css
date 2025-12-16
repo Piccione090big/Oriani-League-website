@@ -1,3 +1,31 @@
+:root {
+    --bg-body: #f4f4f4;
+    --bg-card: #ffffff;
+    --bg-navbar: rgba(51, 51, 51, 0.95);
+    --bg-table-header: #2e6bf9;
+    --bg-hover: #f0f3ff;
+
+    --text-main: #000000;
+    --text-secondary: #333333;
+    --text-inverse: #ffffff;
+
+    --shadow: 0 0 6px rgba(0,0,0,0.15);
+}
+
+body.dark {
+    --bg-body: #121212;
+    --bg-card: #1e1e1e;
+    --bg-navbar: #1a1a1a;
+    --bg-table-header: #3b82f6;
+    --bg-hover: #2a2a2a;
+
+    --text-main: #eaeaea;
+    --text-secondary: #cfcfcf;
+    --text-inverse: #ffffff;
+
+    --shadow: 0 0 10px rgba(0,0,0,0.7);
+}
+
 html, body {
     height: 100%;
 }
@@ -6,7 +34,8 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: var(--bg-body);
+    color: var(--text-main);
     display: flex;
     flex-direction: column;
 }
@@ -14,8 +43,7 @@ body {
 h1 {
     position: sticky;
     top: 0;
-    background: rgba(255,255,255,0.85);
-    backdrop-filter: blur(4px);
+    background: var(--bg-card);
     padding: 10px 0;
     margin: 0;
     z-index: 100;
@@ -23,37 +51,54 @@ h1 {
     text-align: center;
 }
 
+a {
+    color: var(--text-main);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.games-table a {
+    font-weight: 600;
+}
+
+footer a {
+    color: var(--text-inverse);
+}
+
 .navbar {
-    top: 0;
-    background-color: rgba(51, 51, 51, 0.95);
+    background-color: var(--bg-navbar);
     display: flex;
     justify-content: center;
     align-items: center;
     height: 60px;
     padding: 0 10px;
-    z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    box-shadow: var(--shadow);
 }
 
 .navbar a {
-    color: #f2f2f2;
-    text-decoration: none;
+    color: var(--text-inverse);
     padding: 0 10px;
     line-height: 60px;
     font-size: 16px;
-    transition: background-color 0.3s, color 0.3s;
     border-radius: 5px;
-    margin-right: 5px;
+}
+
+.navBarToggle {
+    background-color: rgba(255,255,255,0.1);
+    color: var(--text-inverse);
+    padding: 0 10px;
+    line-height: 60px;
+    font-size: 16px;
+    border-radius: 5px;
 }
 
 .navbar a:hover {
-    background-color: #575757;
-    color: white;
+    background-color: rgba(255,255,255,0.1);
 }
 
 .navbar a.active {
     background-color: #04AA6D;
-    color: white;
 }
 
 .content {
@@ -71,58 +116,44 @@ h1 {
     width: 90%;
     max-width: 600px;
     border-collapse: collapse;
-    background: white;
+    background: var(--bg-card);
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 0 6px rgba(0,0,0,0.15);
+    box-shadow: var(--shadow);
     margin: 25px auto 0 auto;
 }
 
 .games-table th {
-    text-align: center;
-    background: #2e6bf9;
-    color: white;
+    background: var(--bg-table-header);
+    color: var(--text-inverse);
     padding: 10px;
     font-size: 16px;
 }
 
 .games-table td {
-    text-align: center;
     padding: 10px;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
     font-size: 15px;
-}
-
-.games-table tr:last-child td {
-    border-bottom: none;
+    text-align: center;
 }
 
 .games-table tr:hover {
-    background: #f0f3ff;
+    background: var(--bg-hover);
 }
 
 button {
     padding: 10px 20px;
-    background: #2e6bf9;
-    color: white;
+    background: var(--bg-table-header);
+    color: var(--text-inverse);
     border: none;
     border-radius: 8px;
     cursor: pointer;
     font-size: 16px;
     font-weight: bold;
-    transition: 0.2s ease;
 }
 
 button:hover {
-    background: #1e54d6;
-}
-
-button:active {
-    background: #163fa8;
-}
-
-.hidden {
-    display: none;
+    filter: brightness(0.9);
 }
 
 .teams-container {
@@ -135,27 +166,21 @@ button:active {
 }
 
 .team-card {
-    display: block;
-    text-decoration: none;
-    background: white;
+    background: var(--bg-card);
     border-radius: 10px;
     padding: 15px;
     text-align: center;
-    color: #333;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: var(--shadow);
 }
 
 .team-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    transform: translateY(-4px);
 }
 
 .team-logo img {
     width: 60px;
     height: 60px;
     object-fit: contain;
-    margin-bottom: 10px;
 }
 
 .team-name {
@@ -163,113 +188,44 @@ button:active {
     font-size: 15px;
 }
 
-.team-card table tr td {
-    padding: 4px 0;
-}
-
 footer {
-    background-color: rgba(46, 107, 249, 0.9);
-    color: white;
+    background-color: var(--bg-table-header);
+    color: var(--text-inverse);
     text-align: center;
     padding: 20px 10px;
     font-size: 14px;
 }
 
-.footer-link {
-    color: white;
-    text-decoration: underline;
-    margin: 0 5px;
-}
-
 @media (max-width: 850px) {
+
+    .columns {
+        flex-direction: column;
+        gap: 30px;
+    }
 
     .games-table {
         width: 100%;
-        margin: 10px auto;
-        border-radius: 8px;
+        table-layout: fixed;
         box-shadow: none;
     }
 
-    #gamesTable {
-        table-layout: fixed;
+    .games-table th,
+    .games-table td {
+        padding: 5px 3px;
+        word-break: break-word;
     }
 
-    #gamesTable th,
-    #gamesTable td {
-        padding: 5px 2px;
-        word-wrap: break-word;
-        overflow-wrap: break-word;
-    }
-
-    #gamesTable th:nth-child(3), #gamesTable td:nth-child(3) {
-        width: 5px;
+    #gamesTable th:nth-child(3),
+    #gamesTable td:nth-child(3) {
+        width: 10px;
         padding: 0;
     }
 
-    #gamesTable th:nth-child(2), #gamesTable td:nth-child(2),
-    #gamesTable th:nth-child(4), #gamesTable td:nth-child(4) {
+    #gamesTable th:nth-child(2),
+    #gamesTable td:nth-child(2),
+    #gamesTable th:nth-child(4),
+    #gamesTable td:nth-child(4) {
         width: 30px;
         padding: 0;
     }
-
-    .marcatori-container {
-        width: 100%;
-        margin-top: 20px;
-    }
-
-    .teams-container {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-        gap: 15px 60px;
-        width: 90%;
-        max-width: 900px;
-        margin: 20px auto;
-        justify-items: center;
-    }
-
-    .team-card {
-        width: 100%;
-        border-radius: 10px;
-    }
-
-    .gironi-container {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        gap: 20px;
-    }
-
-    .girone-card {
-        width: 100%;
-        border-radius: 0;
-    }
-
-    .squadra-container {
-        display: flex;
-        flex-direction: column;
-        gap: 25px;
-        width: 100%;
-    }
-
-    .classifica-table {
-        width: 100%;
-        border-radius: 0;
-        box-shadow: none;
-    }
-
-    .girone-container {
-        display: flex;
-        flex-direction: column;
-        gap: 25px;
-        width: 100%;
-    }
-
-    .columns {
-        display: flex;
-        flex-direction: column;
-        max-width: 850px;
-        margin: 20px auto;
-        gap: 40px;
-    }
 }
-
