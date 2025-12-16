@@ -74,6 +74,7 @@
             <a href="?p=home" class="active">Home</a>
             <a href="?p=squadre">Squadre</a>
             <a href="?p=gironi">Gironi</a>
+            <button id="themeToggle" onclick="toggleTheme()" class="navBarToggle">🌙</button>
         </div>
 
         <div class="columns">
@@ -119,6 +120,7 @@
             <a href="?p=home">Home</a>
             <a href="?p=squadre" class="active">Squadre</a>
             <a href="?p=gironi">Gironi</a>
+            <button id="themeToggle" onclick="toggleTheme()" class="navBarToggle">🌙</button>
         </div>
 
         <h2 style="text-align:center;">Squadre</h2>
@@ -161,7 +163,7 @@
 
         if (!squadra) {
             document.querySelector(".content").innerHTML = `
-            <h2 style="text-align:center; color:red;">Squadra non trovata!</h2>
+            <h2 style="text-align:center; color:#af0707;">Squadra non trovata!</h2>
         `;
             return;
         }
@@ -197,6 +199,7 @@
             <a href="?p=home">Home</a>
             <a href="?p=squadre" class="active">Squadre</a>
             <a href="?p=gironi">Gironi</a>
+            <button id="themeToggle" onclick="toggleTheme()" class="navBarToggle">🌙</button>
         </div>
 
         <div style="margin:20px 0 0 20px;">
@@ -215,9 +218,9 @@
 
         <h2 style="text-align:center; margin-top:20px;">Informazioni Squadra</h2>
 
-        <p style="margin-top: 20px; text-align: center; font-size:16px;">
-            Girone ${girone.nome}
-        </p>
+        <div style="margin-top: 20px; text-align: center; font-size:16px;">
+            <a style="font-weight: bold" href="?p=girone&id=${girone.id}">Girone ${girone.nome}</a>
+        </div>
 
         <div class="columns">
             <div style="flex:1;">
@@ -233,7 +236,7 @@
                     ${squadreGirone.map((s, i) => `
                         <tr style="background:${s.id === squadra.id ? '#f0f8ff' : 'white'};">
                             <td>${i+1}</td>
-                            <td>${s.nome}</td>
+                            <td>${s.id === squadra.id ? s.nome : `<a href="?p=squadra&id=${s.id}">${s.nome}</a>`}</td>
                             <td>${s.punti}</td>
                             <td>${s.differenza_reti}</td>
                         </tr>
@@ -254,30 +257,29 @@
                     </tr>
 
                     ${partite.map(g => {
-            const played = g.gol1 !== null && g.gol2 !== null;
-            const won =
-                played &&
-                ((g.team1 === squadra.nome && g.gol1 > g.gol2) ||
-                    (g.team2 === squadra.nome && g.gol2 > g.gol1));
-            const draw = played && g.gol1 === g.gol2;
-            const loss = played && !won && !draw;
+                        const played = g.gol1 !== null && g.gol2 !== null;
+                        const won =
+                            played &&
+                            ((g.team1 === squadra.nome && g.gol1 > g.gol2) ||
+                                (g.team2 === squadra.nome && g.gol2 > g.gol1));
+                        const draw = played && g.gol1 === g.gol2;
+                        const loss = played && !won && !draw;
 
-            let bg = "white";
-            if (played && won) bg = "#d4edda";
-            else if (played && draw) bg = "#fff3b3";
-            else if (played && loss) bg = "#f8d7da";
+                        let bg = "white";
+                        if (played && won) bg = "#d4edda";
+                        else if (played && draw) bg = "#fff3b3";
+                        else if (played && loss) bg = "#f8d7da";
 
-            return `
+                        return `
                             <tr style="background:${bg};">
-                                <td>${g.team1}</td>
+                                <td>${g.team1 === squadra.nome ? g.team1 : `<a href="?p=squadra&id=${squadre.find(s => s.nome === g.team1)?.id}">${g.team1}</a>`}</td>
                                 <td>${g.gol1 ?? ""}</td>
                                 <td>-</td>
                                 <td>${g.gol2 ?? ""}</td>
-                                <td>${g.team2}</td>
+                                <td>${g.team2 === squadra.nome ? g.team2 : `<a href="?p=squadra&id=${squadre.find(s => s.nome === g.team2)?.id}">${g.team2}</a>`}</td>
                                 <td>${formatDate(g.orario)}</td>
-                            </tr>
-                        `;
-        }).join("")}
+                            </tr>`;
+                    }).join("")}
                 </table>
             </div>
 
@@ -314,6 +316,7 @@
             <a href="?p=home">Home</a>
             <a href="?p=squadre">Squadre</a>
             <a href="?p=gironi" class="active">Gironi</a>
+            <button id="themeToggle" onclick="toggleTheme()" class="navBarToggle">🌙</button>
         </div>
 
         <h2 style="text-align:center;">Gironi</h2>
@@ -417,6 +420,7 @@
             <a href="?p=home">Home</a>
             <a href="?p=squadre">Squadre</a>
             <a href="?p=gironi" class="active">Gironi</a>
+            <button id="themeToggle" onclick="toggleTheme()" class="navBarToggle">🌙</button>
         </div>
         <div style="margin:20px 0 0 20px;">
             <a href="?p=gironi" style="display:inline-block;padding:8px 16px;background:#2e6bf9;color:white;text-decoration:none;border-radius:8px;font-weight:bold;">
@@ -590,6 +594,19 @@
         }
 
         showingTop20 = !showingTop20;
+    }
+
+    function toggleTheme() {
+        const isDark = document.body.classList.toggle("dark");
+        localStorage.setItem("theme", isDark ? "dark" : "light");
+
+        const btn = document.getElementById("themeToggle");
+        btn.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
+    }
+
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") {
+        document.body.classList.add("dark");
     }
 
     loadPage();
