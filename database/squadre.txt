@@ -1,7 +1,7 @@
-1;1;3;12;Bulls United
-2;1;0;-5;Comandatore FC
-3;1;9;11;Brighingham
-4;1;0;-8;5twins
+1;1;6;20;Bulls United
+2;1;3;2;Comandatore FC
+3;1;9;3;Brighingham
+4;1;0;-15;5twins
 5;1;0;0;Barciolona
 6;1;3;-10;Mango United
 7;2;4;8;Cocco FC
@@ -11,10 +11,10 @@
 11;2;7;16;Sbambo FC
 12;2;0;-24;Gattoparde
 13;3;3;7;Ifty Boys
-14;3;4;1;AC Fea
+14;3;7;4;AC Fea
 15;3;1;-11;Chiringuito FC
 16;3;4;3;El Palmi FC
-17;3;1;0;Salisburro FC
+17;3;1;-3;Salisburro FC
 18;4;7;3;Discepoli di Pol
 19;4;0;-14;Team Broglio
 20;4;0;-3;Greisparrow
@@ -23,5 +23,5 @@
 23;5;4;9;Toma-sturbato FC
 24;5;7;37;Hog Riders
 25;5;6;-5;SSC Zaza
-26;5;0;-18;Los Mahukpegos
-27;5;0;-23;LVPO LVCIVS
+26;5;3;-12;Los Mahukpegos
+27;5;0;-29;LVPO LVCIVS

@@ -234,7 +234,7 @@
                     </tr>
 
                     ${squadreGirone.map((s, i) => `
-                        <tr style="background:${s.id === squadra.id ? '#f0f8ff' : 'white'};">
+                        <tr class="table-row ${s.id === squadra.id ? 'current-team' : ''}">
                             <td>${i+1}</td>
                             <td>${s.id === squadra.id ? s.nome : `<a href="?p=squadra&id=${s.id}">${s.nome}</a>`}</td>
                             <td>${s.punti}</td>
@@ -258,31 +258,41 @@
 
                     ${partite.map(g => {
                         const played = g.gol1 !== null && g.gol2 !== null;
-                        const won =
-                            played &&
-                            ((g.team1 === squadra.nome && g.gol1 > g.gol2) ||
-                                (g.team2 === squadra.nome && g.gol2 > g.gol1));
-                        const draw = played && g.gol1 === g.gol2;
-                        const loss = played && !won && !draw;
 
-                        let bg = "white";
-                        if (played && won) bg = "#d4edda";
-                        else if (played && draw) bg = "#fff3b3";
-                        else if (played && loss) bg = "#f8d7da";
+                        let resultClass = "";
+                        if (played) {
+                            const won =
+                                (g.team1 === squadra.nome && g.gol1 > g.gol2) ||
+                                (g.team2 === squadra.nome && g.gol2 > g.gol1);
+                            const draw = g.gol1 === g.gol2;
+
+                            if (won) resultClass = "match-win";
+                            else if (draw) resultClass = "match-draw";
+                            else resultClass = "match-loss";
+                        }
 
                         return `
-                            <tr style="background:${bg};">
-                                <td>${g.team1 === squadra.nome ? g.team1 : `<a href="?p=squadra&id=${squadre.find(s => s.nome === g.team1)?.id}">${g.team1}</a>`}</td>
+                            <tr class="match-row ${played ? resultClass : 'match-not-played'}">
+                                <td>
+                                    ${g.team1 === squadra.nome
+                                    ? g.team1
+                                    : `<a href="?p=squadra&id=${squadre.find(s => s.nome === g.team1)?.id}">${g.team1}</a>`
+                                }
+                                </td>
                                 <td>${g.gol1 ?? ""}</td>
                                 <td>-</td>
                                 <td>${g.gol2 ?? ""}</td>
-                                <td>${g.team2 === squadra.nome ? g.team2 : `<a href="?p=squadra&id=${squadre.find(s => s.nome === g.team2)?.id}">${g.team2}</a>`}</td>
+                                <td>
+                                    ${g.team2 === squadra.nome
+                                    ? g.team2
+                                    : `<a href="?p=squadra&id=${squadre.find(s => s.nome === g.team2)?.id}">${g.team2}</a>`
+                                }
+                                </td>
                                 <td>${formatDate(g.orario)}</td>
                             </tr>`;
                     }).join("")}
                 </table>
             </div>
-
         </div>
     `;
     }
@@ -431,7 +441,7 @@
         <div class="columns" ">
             <div style="flex:1;">
                 <h2 style="text-align:center;">Classifica</h2>
-                <table style="width:100%; border-collapse: collapse; border: solid 1px black; text-align:center;">
+                <table style="width:100%; border-collapse: collapse;text-align:center;">
                     <tr style="background:#2e6bf9; color:white;">
                         <th>Pos</th>
                         <th>Squadra</th>
@@ -439,9 +449,9 @@
                         <th>Diff</th>
                     </tr>
                     ${squadreGirone.map((s, i) => `
-                        <tr style="border: solid 1px black;">
+                        <tr>
                             <td>${i+1}</td>
-                            <td><a href="?p=squadra&id=${s.id}" style="text-decoration:none;color:black;">${s.nome}</a></td>
+                            <td><a href="?p=squadra&id=${s.id}">${s.nome}</a></td>
                             <td>${s.punti}</td>
                             <td>${s.differenza_reti}</td>
                         </tr>`).join('')}
@@ -449,7 +459,7 @@
             </div>
             <div style="flex:1;">
                 <h2 style="text-align:center;">Partite</h2>
-                <table style="width:100%; border-collapse: collapse; border: solid 1px black; text-align:center; background: white">
+                <table style="width:100%; border-collapse: collapse;text-align:center;">
                     <tr style="background:#2e6bf9; color:white;">
                         <th>Squadra 1</th>
                         <th>Gol</th>
@@ -458,32 +468,40 @@
                         <th>Squadra 2</th>
                         <th>Data</th>
                     </tr>
-                    ${partite.map(g => `
-                        <tr style="border: solid 1px black;">
-                            <td>${g.team1}</td>
-                            <td>${g.gol1 ?? ''}</td>
-                            <td>-</td>
-                            <td>${g.gol2 ?? ''}</td>
-                            <td>${g.team2}</td>
-                            <td>${formatDate(g.orario)}</td>
-                        </tr>`).join('')}
+                    ${partite.map(g => {
+                        const t1 = squadre.find(s => s.nome === g.team1);
+                        const t2 = squadre.find(s => s.nome === g.team2);
+
+                        return `
+                            <tr>
+                                <td>${t1 ? `<a href="?p=squadra&id=${t1.id}">${g.team1}</a>` : g.team1}</td>
+                                <td>${g.gol1 ?? ''}</td>
+                                <td>-</td>
+                                <td>${g.gol2 ?? ''}</td>
+                                <td>${t2 ? `<a href="?p=squadra&id=${t2.id}">${g.team2}</a>` : g.team2}</td>
+                                <td>${formatDate(g.orario)}</td>
+                            </tr>`;
+                    }).join('')}
                 </table>
             </div>
         </div>
         <div style="max-width:800px; margin:40px auto;">
             <h2 style="text-align:center;">Classifica Marcatori</h2>
-            <table style="width:100%; border-collapse: collapse; text-align:center; border: solid 1px black;">
+            <table style="width:100%; border-collapse: collapse; text-align:center;">
                 <tr style="background:#2e6bf9; color:white;">
                     <th>Giocatore</th>
                     <th>Squadra</th>
                     <th>Gol</th>
                 </tr>
-                ${marcatoriGirone.map(m => `
-                    <tr style="border: solid 1px black;">
-                        <td>${m.giocatore}</td>
-                        <td>${m.squadra}</td>
-                        <td>${m.gol}</td>
-                    </tr>`).join('')}
+                ${marcatoriGirone.map(m => {
+                    const t1 = squadre.find(s => s.nome === m.squadra);
+                    return`
+                        <tr>
+                            <td>${m.giocatore}</td>
+                            <td>${t1 ? `<a href='?p=squadra&id=${t1.id}'>${m.squadra}</a>` : m.squadra}</td>
+                            <td>${m.gol}</td>
+                        </tr>`
+                }).join('')}
             </table>
         </div>
     `;
@@ -520,11 +538,11 @@
             tr.className = className;
 
             tr.innerHTML = `
-            <td>${team1}</td>
+            <td>${team1 ? `<a href='?p=squadra&id=${team1.id}' style="font-weight: normal">${team1}</a>` : team1}</td>
             <td>${g.gol1 ?? ""}</td>
             <td>-</td>
             <td>${g.gol2 ?? ""}</td>
-            <td>${team2}</td>
+            <td>${team2 ? `<a href='?p=squadra&id=${team2.id}' style="font-weight: normal">${team2}</a>` : team2}</td>
             <td>${formatDate(g.orario)}</td>
         `;
 
@@ -559,10 +577,13 @@
 
         rows.forEach(r => {
             const tr = document.createElement("tr");
+
+            const t = squadre.find(s => s.nome === r.squadra);
+            const g = gironi.find(g => g.nome === r.girone);
             tr.innerHTML = `
             <td>${r.giocatore}</td>
-            <td>${r.squadra}</td>
-            <td>${r.girone}</td>
+            <td>${t ? `<a href='?p=squadra&id=${t.id}' style="font-weight: normal">${r.squadra}</a>` : r.squadra}</td>
+            <td>${g ? `<a href='?p=squadra&id=${g.id}' style="font-weight: normal">${r.girone}</a>` : r.girone}</td>
             <td>${r.gol}</td>
         `;
             table.appendChild(tr);

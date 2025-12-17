@@ -10,6 +10,12 @@
     --text-inverse: #ffffff;
 
     --shadow: 0 0 6px rgba(0,0,0,0.15);
+
+    --brightness: brightness(0.75);
+
+    --match-win: hsl(145, 35%, 90%);
+    --match-draw: hsl(45, 40%, 90%);
+    --match-loss: hsl(0, 40%, 92%);
 }
 
 body.dark {
@@ -24,6 +30,12 @@ body.dark {
     --text-inverse: #ffffff;
 
     --shadow: 0 0 10px rgba(0,0,0,0.7);
+
+    --brightness: brightness(1.5);
+
+    --match-win: hsl(145, 30%, 25%);
+    --match-draw: hsl(45, 30%, 22%);
+    --match-loss: hsl(0, 30%, 25%);
 }
 
 html, body {
@@ -139,6 +151,44 @@ footer a {
 
 .games-table tr:hover {
     background: var(--bg-hover);
+}
+
+.table-row {
+    background: var(--bg-body);
+}
+
+.table-row:hover {
+    filter: var(--brightness);
+}
+
+.current-team {
+    background: var(--bg-body);
+    filter: var(--brightness);
+    font-weight: bold;
+}
+
+.match-row {
+    background: var(--bg-body);
+}
+
+.match-row:hover {
+    filter: var(--brightness);
+}
+
+.match-win {
+    background: var(--match-win);
+}
+
+.match-draw {
+    background: var(--match-draw);
+}
+
+.match-loss {
+    background: var(--match-loss);
+}
+
+.match-not-played {
+    background: var(--bg-body);
 }
 
 button {

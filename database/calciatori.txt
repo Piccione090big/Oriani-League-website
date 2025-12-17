@@ -21,9 +21,9 @@
 21;Lorenzo Pleiadi;2;21
 22;Pietro Bazzi;0;27
 23;Matteo Cavalieri;1;27
-24;Gianmaria Pasi;0;27
+24;Gianmaria Pasi;1;27
 25;Alessandro Marri;0;27
-26;Jacopo D'elia;1;27
+26;Jacopo D'elia;3;27
 27;Gabriele Barbanti;5;9
 28;Manuel Andrini;0;9
 29;Enrico Cavallari;3;9
@@ -49,7 +49,7 @@
 49;Lorenzo Pini;0;17
 50;Ettore Rinaldi;0;17
 51;Federico Tapinassi;0;17
-52;Mattia Polani;0;17
+52;Mattia Polani;2;17
 53;Mattia Santarelli;0;17
 54;Edoardo Succi;0;17
 55;Federico Orlando;0;17
@@ -70,10 +70,10 @@
 70;Filippo Padoan;0;13
 71;Alberto Moia;0;26
 72;Gian Marco Castellani;0;26
-73;Luca Della Valle;0;26
+73;Luca Della Valle;5;26
 74;Paolo Alberani;0;26
-75;Andrea Spignoli;2;26
-76;Simone Palatella;2;26
+75;Andrea Spignoli;4;26
+76;Simone Palatella;4;26
 77;Lorenzo Doria;0;26
 78;Davide Rasponi;8;19
 79;Filippo Maria Serafini;1;19
@@ -124,23 +124,23 @@
 124;Mattia Romagnoli;0;25
 125;Gabriele Miserocchi;3;3
 126;Alberto Giovannini;1;3
-127;Christian Filippini;3;3
+127;Christian Filippini;5;3
 128;Lorenzo Marsiglio;3;3
 129;Buzzi;1;3
-130;Alberto Dello Russo;6;1
-131;Alessandro Zannoni;4;1
+130;Alberto Dello Russo;11;1
+131;Alessandro Zannoni;8;1
 132;Luca Marcucci;1;1
-133;Lorenzo Rossetti;2;1
+133;Lorenzo Rossetti;4;1
 134;Giulio Cerrato;3;10
 135;Brigliadori;1;10
 136;Luca Santini;2;10
-137;Giulio Papale;3;14
-138;Leo Stecchi;1;14
-139;Tommaso Gori;4;14
+137;Giulio Papale;5;14
+138;Leo Stecchi;2;14
+139;Tommaso Gori;5;14
 140;Lorenzo Savelli;0;14
 141;Giacomo Suprani;2;14
 142;Andrea Neri;0;14
-143;Matteo Aresu;2;14
+143;Matteo Aresu;3;14
 144;Alessandro Bertini;0;1
 145;Leonardo Muratori;0;1
 146;Gennaro Palazzo;0;1
@@ -161,7 +161,7 @@
 161;Alessandro Ruggeri;1;8
 162;Beatrice Pantarotto;1;21
 163;Edige Oussa;0;26
-164;Brogna;2;3
+164;Brogna;3;3
 165;Gentili;10;8
 166;Cabarletti;6;8
 167;Alessandro Stumpo;1;9
