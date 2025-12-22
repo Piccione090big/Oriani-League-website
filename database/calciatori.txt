@@ -24,7 +24,7 @@
 24;Gianmaria Pasi;1;27
 25;Alessandro Marri;0;27
 26;Jacopo D'elia;3;27
-27;Gabriele Barbanti;9;9
+27;Gabriele Barbanti;10;9
 28;Manuel Andrini;0;9
 29;Enrico Cavallari;3;9
 30;Lorenzo Terdoslavi;1;9
@@ -40,12 +40,12 @@
 40;Christian Rosano;0;15
 41;Matteo Graziani;0;15
 42;Giorgia Vandi;2;12
-43;Elena Cavassi;1;12
+43;Elena Cavassi;2;12
 44;Ginevra Frontino;2;12
-45;Sofia Tarroni;1;12
-46;Alessandra Bagioni;1;12
-47;Alyssa Lelli;1;12
-48;Benedetta Caruso;2;12
+45;Sofia Tarroni;2;12
+46;Alessandra Bagioni;2;12
+47;Alyssa Lelli;2;12
+48;Benedetta Caruso;3;12
 49;Lorenzo Pini;0;17
 50;Ettore Rinaldi;0;17
 51;Federico Tapinassi;0;17
@@ -144,9 +144,9 @@
 144;Alessandro Bertini;0;1
 145;Leonardo Muratori;1;1
 146;Gennaro Palazzo;0;1
-147;Tommaso Fervari;4;11
-148;Matteo Utili;5;11
-149;Luca Terzo;2;11
+147;Tommaso Fervari;8;11
+148;Matteo Utili;6;11
+149;Luca Terzo;5;11
 150;Christian Zarri;0;11
 151;Luca Forastieri;6;11
 152;Giacomo Pazzi;0;11
@@ -178,5 +178,8 @@
 178;Vico;1;19
 179;De Astis;4;10
 180;Ravaioli;1;7
-181;Ambrosini;1;9
+181;Ambrosini;2;9
 182;Paglia;1;10
+183;Ngjela;4;7
+184;Nanni;4;7
+185;Bellettati;4;7
