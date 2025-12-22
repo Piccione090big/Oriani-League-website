@@ -27,6 +27,8 @@
             await renderSquadra();
         else if (page === "girone")
             await renderGirone();
+        else if (page === "finali")
+            await renderFinali();
     }
 
     async function loadAllData() {
@@ -74,6 +76,7 @@
             <a href="?p=home" class="active">Home</a>
             <a href="?p=squadre">Squadre</a>
             <a href="?p=gironi">Gironi</a>
+            <a href="?p=finali">Tabellone</a>
             <button id="themeToggle" onclick="toggleTheme()" class="navBarToggle">${document.body.classList.contains("dark") ? "☀️" : "🌙"}</button>
         </div>
 
@@ -120,6 +123,7 @@
             <a href="?p=home">Home</a>
             <a href="?p=squadre" class="active">Squadre</a>
             <a href="?p=gironi">Gironi</a>
+            <a href="?p=finali">Tabellone</a>
             <button id="themeToggle" onclick="toggleTheme()" class="navBarToggle">${document.body.classList.contains("dark") ? "☀️" : "🌙"}</button>
         </div>
 
@@ -199,6 +203,7 @@
             <a href="?p=home">Home</a>
             <a href="?p=squadre" class="active">Squadre</a>
             <a href="?p=gironi">Gironi</a>
+            <a href="?p=finali">Tabellone</a>
             <button id="themeToggle" onclick="toggleTheme()" class="navBarToggle">${document.body.classList.contains("dark") ? "☀️" : "🌙"}</button>
         </div>
 
@@ -326,6 +331,7 @@
             <a href="?p=home">Home</a>
             <a href="?p=squadre">Squadre</a>
             <a href="?p=gironi" class="active">Gironi</a>
+            <a href="?p=finali">Tabellone</a>
             <button id="themeToggle" onclick="toggleTheme()" class="navBarToggle">${document.body.classList.contains("dark") ? "☀️" : "🌙"}</button>
         </div>
 
@@ -430,6 +436,7 @@
             <a href="?p=home">Home</a>
             <a href="?p=squadre">Squadre</a>
             <a href="?p=gironi" class="active">Gironi</a>
+            <a href="?p=finali">Tabellone</a>
             <button id="themeToggle" onclick="toggleTheme()" class="navBarToggle">${document.body.classList.contains("dark") ? "☀️" : "🌙"}</button>
         </div>
         <div style="margin:20px 0 0 20px;">
@@ -505,6 +512,129 @@
             </table>
         </div>
     `;
+    }
+
+    const ELIMINATION_START = new Date("2025-06-15");
+
+    const ROUNDS = [
+        { name: "Ottavi", start: "2025-06-15", end: "2025-06-17" },
+        { name: "Quarti", start: "2025-06-18", end: "2025-06-20" },
+        { name: "Semifinali", start: "2025-06-21", end: "2025-06-23" },
+        { name: "Finale", start: "2025-06-24", end: "2025-06-25" }
+    ];
+
+    function getRound(matchDate) {
+        const d = new Date(matchDate);
+
+        return ROUNDS.find(r =>
+            d >= new Date(r.start) && d <= new Date(r.end)
+        )?.name || null;
+    }
+
+    function buildBracket(games) {
+        const bracket = {};
+
+        ROUNDS.forEach(r => bracket[r.name] = []);
+
+        games
+            .filter(g => new Date(g.orario) >= ELIMINATION_START)
+            .forEach(g => {
+                const round = getRound(g.orario);
+                if (round) bracket[round].push(g);
+            });
+
+        return bracket;
+    }
+
+    async function renderFinali() {
+        const [squadre, games] = await Promise.all([
+            loadSquadre(),
+            loadGames()
+        ]);
+
+        const bracketData = buildBracket(games);
+
+        const structure = [
+            { name: "Ottavi", count: 8 },
+            { name: "Quarti", count: 4 },
+            { name: "Semifinali", count: 2 },
+            { name: "Finale", count: 1 }
+        ];
+
+        document.querySelector(".content").innerHTML = `
+        <h1>Oriani League</h1>
+        <div class="navbar">
+            <a href="?p=home">Home</a>
+            <a href="?p=squadre">Squadre</a>
+            <a href="?p=gironi">Gironi</a>
+            <a href="?p=finali" class="active">Tabellone</a>
+            <button id="themeToggle" onclick="toggleTheme()" class="navBarToggle">${document.body.classList.contains("dark") ? "☀️" : "🌙"}</button>
+        </div>
+
+        <h2 style="text-align:center; margin-top: 20px;">Tabellone Finale</h2>
+
+        <div class="bracket-wrapper" style="min-height: 800px;">
+            ${structure.map(round => {
+            const realMatches = bracketData[round.name] || [];
+            const slots = new Array(round.count).fill(null).map((_, i) => realMatches[i] || null);
+
+            return `
+                <div class="bracket-column">
+                    <div class="bracket-header">${round.name}</div>
+
+                    ${slots.map(m => {
+                        let cardContent = "";
+
+                        if (!m) {
+                            cardContent = `
+                                    <div class="match-card" style="opacity: 0.6;">
+                                        <div class="team-row">
+                                            <span style="color:var(--text-secondary); font-style:italic;">TBD</span>
+                                            <strong style="background: #999;">-</strong>
+                                        </div>
+                                        <div class="team-row">
+                                            <span style="color:var(--text-secondary); font-style:italic;">TBD</span>
+                                            <strong style="background: #999;">-</strong>
+                                        </div>
+                                        <div class="match-date">In attesa</div>
+                                    </div>`;
+                        }
+                        else {
+                            const t1 = squadre.find(s => s.id === m.id1)?.nome ?? "TBD";
+                            const t2 = squadre.find(s => s.id === m.id2)?.nome ?? "TBD";
+                            const score1 = m.gol1 !== null ? m.gol1 : "";
+                            const score2 = m.gol2 !== null ? m.gol2 : "";
+
+                            const w1 = (m.gol1 !== null && m.gol2 !== null && m.gol1 > m.gol2) ? 'font-weight:bold; color:var(--text-main);' : 'color:var(--text-secondary);';
+                            const w2 = (m.gol1 !== null && m.gol2 !== null && m.gol2 > m.gol1) ? 'font-weight:bold; color:var(--text-main);' : 'color:var(--text-secondary);';
+
+                            cardContent = `
+                                    <div class="match-card">
+                                        <div class="team-row" style="${w1}">
+                                            <span>${t1}</span>
+                                            <strong>${score1}</strong>
+                                        </div>
+                                        <div class="team-row" style="${w2}">
+                                            <span>${t2}</span>
+                                            <strong>${score2}</strong>
+                                        </div>
+                                        <div class="match-date">
+                                            ${formatDate(m.orario).split(' ')[0]}
+                                        </div>
+                                    </div>`;
+                        }
+
+                        return `
+                                <div class="match-wrapper">
+                                    ${cardContent}
+                                </div>
+                                `;
+                    }).join("")}
+                </div>
+                `;
+            }).join("")}
+        </div>
+        `;
     }
 
     let showAllGames = false;
