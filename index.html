@@ -658,6 +658,7 @@
         list.sort((a, b) => new Date(a.orario) - new Date(b.orario));
 
         list.forEach(g => {
+            console.log(g.id1)
             const team1 = squadre.find(s => s.id === g.id1)?.nome ?? "???";
             const team2 = squadre.find(s => s.id === g.id2)?.nome ?? "???";
 
@@ -668,11 +669,11 @@
             tr.className = className;
 
             tr.innerHTML = `
-            <td>${team1 ? `<a href='?p=squadra&id=${team1.id}' style="font-weight: normal">${team1}</a>` : team1}</td>
+            <td>${team1 ? `<a href='?p=squadra&id=${g.id1}' style="font-weight: normal">${team1}</a>` : team1}</td>
             <td>${g.gol1 ?? ""}</td>
             <td>-</td>
             <td>${g.gol2 ?? ""}</td>
-            <td>${team2 ? `<a href='?p=squadra&id=${team2.id}' style="font-weight: normal">${team2}</a>` : team2}</td>
+            <td>${team2 ? `<a href='?p=squadra&id=${g.id2}' style="font-weight: normal">${team2}</a>` : team2}</td>
             <td>${formatDate(g.orario)}</td>
         `;
 
