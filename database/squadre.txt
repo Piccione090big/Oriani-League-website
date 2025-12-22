@@ -11,8 +11,8 @@
 11;2;10;22;Sbambo FC
 12;2;0;-34;Gattoparde
 13;3;6;10;Ifty Boys
-14;3;7;4;AC Fea
-15;3;1;-11;Chiringuito FC
+14;3;10;8;AC Fea
+15;3;1;-15;Chiringuito FC
 16;3;4;0;El Palmi FC
 17;3;1;-3;Salisburro FC
 18;4;10;6;Discepoli di Pol

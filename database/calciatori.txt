@@ -32,13 +32,13 @@
 32;Francesco Cavallari;0;9
 33;Alessandro Naldi;3;9
 34;Jacopo Torre;0;9
-35;Alessandro Mazza;0;15
+35;Alessandro Mazza;1;15
 36;Andrea Venturini;0;15
-37;Giuseppe Grosso;6;15
+37;Giuseppe Grosso;8;15
 38;Salvatore Santalucia;2;15
 39;Corrado Magliocco;0;15
 40;Christian Rosano;0;15
-41;Matteo Graziani;0;15
+41;Matteo Graziani;1;15
 42;Giorgia Vandi;2;12
 43;Elena Cavassi;2;12
 44;Ginevra Frontino;2;12
@@ -134,9 +134,9 @@
 134;Giulio Cerrato;6;10
 135;Brigliadori;7;10
 136;Luca Santini;3;10
-137;Giulio Papale;5;14
-138;Leo Stecchi;2;14
-139;Tommaso Gori;5;14
+137;Giulio Papale;8;14
+138;Leo Stecchi;5;14
+139;Tommaso Gori;7;14
 140;Lorenzo Savelli;0;14
 141;Giacomo Suprani;2;14
 142;Andrea Neri;0;14
