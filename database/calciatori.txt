@@ -1,5 +1,5 @@
-1;Budini;12;16
-2;Pietro Bosi;7;16
+1;Budini;16;16
+2;Pietro Bosi;8;16
 3;Leonardo Vella;1;16
 4;Emanuele Scandellari;0;16
 5;Emanuele Daisse;2;16
@@ -46,26 +46,26 @@
 46;Alessandra Bagioni;2;12
 47;Alyssa Lelli;2;12
 48;Benedetta Caruso;3;12
-49;Lorenzo Pini;0;17
+49;Lorenzo Pini;1;17
 50;Ettore Rinaldi;0;17
 51;Federico Tapinassi;0;17
-52;Mattia Polani;2;17
+52;Mattia Polani;8;17
 53;Mattia Santarelli;0;17
 54;Edoardo Succi;0;17
 55;Federico Orlando;0;17
 56;Ascanio Serrai;0;17
 57;Alessandro Gismondi;0;6
-58;Tommaso Bolognesi;2;6
+58;Tommaso Bolognesi;4;6
 59;Diego Cevolani;4;6
-60;Filippo Tassinari;1;6
-61;Pasquale Alborino;4;6
-62;edo_pranz0 ;0;6
-63;Niccolò Leonardi;3;6
-64;Elia Argnani;5;13
+60;Filippo Tassinari;4;6
+61;Pasquale Alborino;5;6
+62;Edoardo Pranzini;1;6
+63;Niccolò Leonardi;7;6
+64;Elia Argnani;8;13
 65;Jacopo Martini;0;13
-66;Andrea Bambi;10;13
+66;Andrea Bambi;13;13
 67;Alessandro De Donno;2;13
-68;Marco Mari;3;13
+68;Marco Mari;6;13
 69;Lorenzo Placci;0;13
 70;Filippo Padoan;1;13
 71;Alberto Moia;0;26
@@ -96,7 +96,7 @@
 96;Federico Zampiga;0;22
 97;Gianluca Dimella;0;4
 98;Salvatore Crispi;0;4
-99;Raffaele Randi;0;4
+99;Raffaele Randi;2;4
 100;Massimo Bianchi;0;4
 101;Ettore Mancanelli;0;4
 102;Simone Di Tizio;0;4
@@ -183,3 +183,4 @@
 183;Ngjela;4;7
 184;Nanni;4;7
 185;Bellettati;4;7
+186;Panzavolta;1;4
