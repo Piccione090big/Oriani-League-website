@@ -136,7 +136,6 @@
         const container = document.getElementById("teamsContainer");
 
         squads.forEach(t => {
-            console.log(t['nome'].toLowerCase().replaceAll(' ', '').replaceAll('#', ''))
             const el = document.createElement("a");
             el.href = `?p=squadra&id=${t.id}`;
             el.className = "team-card";
@@ -659,7 +658,6 @@
         list.sort((a, b) => new Date(a.orario) - new Date(b.orario));
 
         list.forEach(g => {
-            console.log(g.id1)
             const team1 = squadre.find(s => s.id === g.id1)?.nome ?? "???";
             const team2 = squadre.find(s => s.id === g.id2)?.nome ?? "???";
 
@@ -777,4 +775,5 @@
 </footer>
 </body>
 </html>
+
 
