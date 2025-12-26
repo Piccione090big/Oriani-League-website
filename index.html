@@ -649,13 +649,17 @@
 
         const now = new Date();
         const oneWeekAgo = new Date(now.getTime() - 2 * 24 * 60 * 60 * 1000);
-        const nextWeek = new Date(now.getTime() + 7 * 24 * 60 * 60 * 1000);
+        const nextWeek = new Date(now.getTime() + 20 * 24 * 60 * 60 * 1000);
 
         let list = showAllGames
             ? games
             : games.filter(g => new Date(g.orario) >= oneWeekAgo && new Date(g.orario) <= nextWeek);
 
         list.sort((a, b) => new Date(a.orario) - new Date(b.orario));
+        
+        while (table.rows.length > 1) {
+            table.deleteRow(1);
+        }
 
         list.forEach(g => {
             const team1 = squadre.find(s => s.id === g.id1)?.nome ?? "???";
@@ -775,5 +779,3 @@
 </footer>
 </body>
 </html>
-
-
