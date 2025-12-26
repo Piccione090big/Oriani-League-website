@@ -514,13 +514,13 @@
     `;
     }
 
-    const ELIMINATION_START = new Date("2025-06-15");
+    const ELIMINATION_START = new Date("2026-01-12");
 
     const ROUNDS = [
-        { name: "Ottavi", start: "2025-06-15", end: "2025-06-17" },
-        { name: "Quarti", start: "2025-06-18", end: "2025-06-20" },
-        { name: "Semifinali", start: "2025-06-21", end: "2025-06-23" },
-        { name: "Finale", start: "2025-06-24", end: "2025-06-25" }
+        { name: "Ottavi", start: "2026-01-12", end: "2026-01-13" },
+        { name: "Quarti", start: "2026-01-14", end: "2026-01-15" },
+        { name: "Semifinali", start: "2026-01-18", end: "2026-01-19" },
+        { name: "Finale", start: "2026-01-25", end: "2026-01-26" }
     ];
 
     function getRound(matchDate) {
@@ -536,10 +536,10 @@
 
         ROUNDS.forEach(r => bracket[r.name] = []);
 
-        games
-            .filter(g => new Date(g.orario) >= ELIMINATION_START)
+        games.filter(g => new Date(g.orario) >= ELIMINATION_START)
             .forEach(g => {
                 const round = getRound(g.orario);
+                console.log(round);
                 if (round) bracket[round].push(g);
             });
 
@@ -553,6 +553,7 @@
         ]);
 
         const bracketData = buildBracket(games);
+        console.log(bracketData);
 
         const structure = [
             { name: "Ottavi", count: 8 },
@@ -575,62 +576,62 @@
 
         <div class="bracket-wrapper" style="min-height: 800px;">
             ${structure.map(round => {
-            const realMatches = bracketData[round.name] || [];
-            const slots = new Array(round.count).fill(null).map((_, i) => realMatches[i] || null);
-
-            return `
-                <div class="bracket-column">
-                    <div class="bracket-header">${round.name}</div>
-
-                    ${slots.map(m => {
-                        let cardContent = "";
-
-                        if (!m) {
-                            cardContent = `
-                                    <div class="match-card" style="opacity: 0.6;">
-                                        <div class="team-row">
-                                            <span style="color:var(--text-secondary); font-style:italic;">TBD</span>
-                                            <strong style="background: #999;">-</strong>
-                                        </div>
-                                        <div class="team-row">
-                                            <span style="color:var(--text-secondary); font-style:italic;">TBD</span>
-                                            <strong style="background: #999;">-</strong>
-                                        </div>
-                                        <div class="match-date">In attesa</div>
-                                    </div>`;
-                        }
-                        else {
-                            const t1 = squadre.find(s => s.id === m.id1)?.nome ?? "TBD";
-                            const t2 = squadre.find(s => s.id === m.id2)?.nome ?? "TBD";
-                            const score1 = m.gol1 !== null ? m.gol1 : "";
-                            const score2 = m.gol2 !== null ? m.gol2 : "";
-
-                            const w1 = (m.gol1 !== null && m.gol2 !== null && m.gol1 > m.gol2) ? 'font-weight:bold; color:var(--text-main);' : 'color:var(--text-secondary);';
-                            const w2 = (m.gol1 !== null && m.gol2 !== null && m.gol2 > m.gol1) ? 'font-weight:bold; color:var(--text-main);' : 'color:var(--text-secondary);';
-
-                            cardContent = `
-                                    <div class="match-card">
-                                        <div class="team-row" style="${w1}">
-                                            <span>${t1}</span>
-                                            <strong>${score1}</strong>
-                                        </div>
-                                        <div class="team-row" style="${w2}">
-                                            <span>${t2}</span>
-                                            <strong>${score2}</strong>
-                                        </div>
-                                        <div class="match-date">
-                                            ${formatDate(m.orario).split(' ')[0]}
-                                        </div>
-                                    </div>`;
-                        }
-
-                        return `
-                                <div class="match-wrapper">
-                                    ${cardContent}
-                                </div>
-                                `;
-                    }).join("")}
-                </div>
+                const realMatches = bracketData[round.name] || [];
+                const slots = new Array(round.count).fill(null).map((_, i) => realMatches[i] || null);
+    
+                return `
+                    <div class="bracket-column">
+                        <div class="bracket-header">${round.name}</div>
+    
+                        ${slots.map(m => {
+                            let cardContent;
+    
+                            if (!m) {
+                                cardContent = `
+                                        <div class="match-card" style="opacity: 0.6;">
+                                            <div class="team-row">
+                                                <span style="color:var(--text-secondary); font-style:italic;">TBD</span>
+                                                <strong style="background: #999;">-</strong>
+                                            </div>
+                                            <div class="team-row">
+                                                <span style="color:var(--text-secondary); font-style:italic;">TBD</span>
+                                                <strong style="background: #999;">-</strong>
+                                            </div>
+                                            <div class="match-date">In attesa</div>
+                                        </div>`;
+                            }
+                            else {
+                                const t1 = squadre.find(s => s.id === m.id1)?.nome ?? "TBD";
+                                const t2 = squadre.find(s => s.id === m.id2)?.nome ?? "TBD";
+                                const score1 = m.gol1 !== null ? m.gol1 : "-";
+                                const score2 = m.gol2 !== null ? m.gol2 : "-";
+    
+                                const w1 = (m.gol1 !== null && m.gol2 !== null && m.gol1 > m.gol2) ? 'font-weight:bold; color:var(--text-main);' : 'color:var(--text-secondary);';
+                                const w2 = (m.gol1 !== null && m.gol2 !== null && m.gol2 > m.gol1) ? 'font-weight:bold; color:var(--text-main);' : 'color:var(--text-secondary);';
+    
+                                cardContent = `
+                                        <div class="match-card">
+                                            <div class="team-row" style="${w1}">
+                                                <span>${t1}</span>
+                                                <strong>${score1}</strong>
+                                            </div>
+                                            <div class="team-row" style="${w2}">
+                                                <span>${t2}</span>
+                                                <strong>${score2}</strong>
+                                            </div>
+                                            <div class="match-date">
+                                                ${formatDate(m.orario).split(' ')[0]}
+                                            </div>
+                                        </div>`;
+                            }
+    
+                            return `
+                                    <div class="match-wrapper">
+                                        ${cardContent}
+                                    </div>
+                                    `;
+                        }).join("")}
+                    </div>
                 `;
             }).join("")}
         </div>
@@ -656,7 +657,7 @@
             : games.filter(g => new Date(g.orario) >= oneWeekAgo && new Date(g.orario) <= nextWeek);
 
         list.sort((a, b) => new Date(a.orario) - new Date(b.orario));
-        
+
         while (table.rows.length > 1) {
             table.deleteRow(1);
         }
