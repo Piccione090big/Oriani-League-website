@@ -378,6 +378,8 @@
         });
     }
 
+    const GIRONI_ELIMINATION_START = new Date("2026-01-07");
+
     async function renderGirone() {
         const params = new URLSearchParams(window.location.search);
         const id = Number(params.get("id"));
@@ -403,7 +405,7 @@
             .filter(s => s.girone === id)
             .sort((a, b) => b.punti - a.punti || b.differenza_reti - a.differenza_reti);
 
-        const partite = games.filter(g => {
+        const partite = games.filter(g => new Date(g.orario) < GIRONI_ELIMINATION_START).filter(g => {
             const t1 = squadre.find(s => s.id === g.id1)?.nome;
             const t2 = squadre.find(s => s.id === g.id2)?.nome;
             return squadreGirone.some(s => s.nome === t1 || s.nome === t2);
@@ -553,7 +555,6 @@
         ]);
 
         const bracketData = buildBracket(games);
-        console.log(bracketData);
 
         const structure = [
             { name: "Ottavi", count: 8 },
@@ -578,14 +579,14 @@
             ${structure.map(round => {
                 const realMatches = bracketData[round.name] || [];
                 const slots = new Array(round.count).fill(null).map((_, i) => realMatches[i] || null);
-    
+
                 return `
                     <div class="bracket-column">
                         <div class="bracket-header">${round.name}</div>
-    
+
                         ${slots.map(m => {
                             let cardContent;
-    
+
                             if (!m) {
                                 cardContent = `
                                         <div class="match-card" style="opacity: 0.6;">
@@ -605,10 +606,10 @@
                                 const t2 = squadre.find(s => s.id === m.id2)?.nome ?? "TBD";
                                 const score1 = m.gol1 !== null ? m.gol1 : "-";
                                 const score2 = m.gol2 !== null ? m.gol2 : "-";
-    
+
                                 const w1 = (m.gol1 !== null && m.gol2 !== null && m.gol1 > m.gol2) ? 'font-weight:bold; color:var(--text-main);' : 'color:var(--text-secondary);';
                                 const w2 = (m.gol1 !== null && m.gol2 !== null && m.gol2 > m.gol1) ? 'font-weight:bold; color:var(--text-main);' : 'color:var(--text-secondary);';
-    
+
                                 cardContent = `
                                         <div class="match-card">
                                             <div class="team-row" style="${w1}">
@@ -624,7 +625,7 @@
                                             </div>
                                         </div>`;
                             }
-    
+
                             return `
                                     <div class="match-wrapper">
                                         ${cardContent}
@@ -663,8 +664,8 @@
         }
 
         list.forEach(g => {
-            const team1 = squadre.find(s => s.id === g.id1)?.nome ?? "???";
-            const team2 = squadre.find(s => s.id === g.id2)?.nome ?? "???";
+            const team1 = squadre.find(s => s.id === g.id1)?.nome ?? "TBD";
+            const team2 = squadre.find(s => s.id === g.id2)?.nome ?? "TBD";
 
             const played = g.gol1 !== null && g.gol2 !== null;
             const className = played ? "played" : "not-played";
@@ -673,11 +674,11 @@
             tr.className = className;
 
             tr.innerHTML = `
-            <td>${team1 ? `<a href='?p=squadra&id=${g.id1}' style="font-weight: normal">${team1}</a>` : team1}</td>
+            <td>${team1 !== "TBD" ? `<a href='?p=squadra&id=${g.id1}' style="font-weight: normal">${team1}</a>` : team1}</td>
             <td>${g.gol1 ?? ""}</td>
             <td>-</td>
             <td>${g.gol2 ?? ""}</td>
-            <td>${team2 ? `<a href='?p=squadra&id=${g.id2}' style="font-weight: normal">${team2}</a>` : team2}</td>
+            <td>${team2 !== "TBD" ? `<a href='?p=squadra&id=${g.id2}' style="font-weight: normal">${team2}</a>` : team2}</td>
             <td>${formatDate(g.orario)}</td>
         `;
 
