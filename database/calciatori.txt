@@ -1,5 +1,5 @@
-1;Alex Budini;16;16
-2;Pietro Bosi;8;16
+1;Alex Budini;18;16
+2;Pietro Bosi;10;16
 3;Leonardo Vella;1;16
 4;Emanuele Scandellari;0;16
 5;Emanuele Daisse;2;16
@@ -24,13 +24,13 @@
 24;Gianmaria Pasi;1;27
 25;Alessandro Marri;0;27
 26;Jacopo D'elia;3;27
-27;Gabriele Barbanti;10;9
+27;Gabriele Barbanti;11;9
 28;Manuel Andrini;0;9
 29;Enrico Cavallari;3;9
 30;Lorenzo Terdoslavi;1;9
 31;Riccardo Bassi;1;9
 32;Francesco Cavallari;0;9
-33;Alessandro Naldi;3;9
+33;Alessandro Naldi;4;9
 34;Jacopo Torre;0;9
 35;Alessandro Mazza;1;15
 36;Andrea Venturini;0;15
@@ -75,10 +75,10 @@
 75;Andrea Spignoli;4;26
 76;Simone Palatella;4;26
 77;Lorenzo Doria;1;26
-78;Davide Rasponi;12;19
-79;Filippo Maria Serafini;2;19
+78;Davide Rasponi;14;19
+79;Filippo Maria Serafini;4;19
 80;Giuseppe Porta;0;19
-81;Federico Tassinari;1;19
+81;Federico Tassinari;2;19
 82;Francesco Freddi;5;20
 83;Matthew Fantini;1;20
 84;Giovanni Santoro;0;20
@@ -87,11 +87,11 @@
 87;Thomas Petretti;2;20
 88;Grei Sulejmani;0;20
 89;Gabriele Franchini;0;20
-90;Gianpaolo Romeo;1;22
-91;David Kadji;0;22
-92;Giovanni Rametta;2;22
-93;Leonardo Filipponi;2;22
-94;Giovanni Casadio;3;22
+90;Gianpaolo Romeo;2;22
+91;David Kadji;1;22
+92;Giovanni Rametta;8;22
+93;Leonardo Filipponi;3;22
+94;Giovanni Casadio;4;22
 95;Giorgio Tallevi;1;22
 96;Federico Zampiga;0;22
 97;Gianluca Dimella;0;4
@@ -116,10 +116,10 @@
 116;Giacomo Solaroli;16;24
 117;Simone Beleffi;4;24
 118;Leonardo Bezzi;0;25
-119;Telemaco Costantini;0;25
+119;Telemaco Costantini;3;25
 120;Matteo Forastieri;5;25
-121;Pietro Galletti;3;25
-122;Filippo Greggio;2;25
+121;Pietro Galletti;5;25
+122;Filippo Greggio;3;25
 123;Filippo Molducci;1;25
 124;Mattia Romagnoli;0;25
 125;Gabriele Miserocchi;3;3
@@ -155,8 +155,8 @@
 155;Lorenzo Babini;2;2
 156;Leonardo Pullano;2;2
 157;Guerrini;1;2
-158;Francesco Zampiga;10;7
-159;Carlo Travanini;7;7
+158;Francesco Zampiga;11;7
+159;Carlo Travanini;9;7
 160;Leonardo Palmeri;5;8
 161;Alessandro Ruggeri;2;8
 162;Beatrice Pantarotto;1;21
@@ -173,12 +173,12 @@
 173;Fusconi;1;2
 174;Caputi;1;2
 175;Giacomo Magnani;1;1
-176;Matteo Giuliani;4;19
-177;Pietro Andria;1;19
-178;Angleo Vico;1;19
+176;Matteo Giuliani;6;19
+177;Pietro Andria;2;19
+178;Angleo Vico;2;19
 179;Luca De Astis;4;10
 180;Luca Ravaioli;1;7
-181;Ambrosini;2;9
+181;Ambrosini;3;9
 182;Leone Paglia;1;10
 183;Isabel Ngjela;4;7
 184;Alessandro Giannini;4;7
