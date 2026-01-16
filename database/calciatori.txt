@@ -9,8 +9,8 @@
 9;Filippo Poverini;5;18
 10;Filippo Pattuelli;0;18
 11;Nicolò Sonnessa;2;18
-12;Matteo Minardi;4;18
-13;Orlando Andrini;10;18
+12;Matteo Minardi;5;18
+13;Orlando Andrini;12;18
 14;Samuele Paci;8;21
 15;Luigi Cappelli;0;21
 16;Ascanio Finetto;1;21
@@ -76,7 +76,7 @@
 76;Simone Palatella;5;26
 77;Lorenzo Doria;3;26
 78;Davide Rasponi;16;19
-79;Filippo Maria Serafini;5;19
+79;Filippo Maria Serafini;6;19
 80;Giuseppe Porta;0;19
 81;Federico Tassinari;2;19
 82;Francesco Freddi;5;20
@@ -101,13 +101,13 @@
 101;Ettore Mancanelli;0;4
 102;Simone Di Tizio;0;4
 103;Rayan Er Rasouji;0;4
-104;Giacomo Parmiani;1;23
-105;Christian Curci;3;23
+104;Giacomo Parmiani;2;23
+105;Christian Curci;4;23
 106;Francesco Vicari;3;23
 107;Leonardo Dal Pozzo;7;23
-108;Giacomo Angiolini;8;23
-109;Elia Manservisi;20;23
-110;Diego Zaccherini;7;23
+108;Giacomo Angiolini;11;23
+109;Elia Manservisi;23;23
+110;Diego Zaccherini;8;23
 111;Alessandro Bergonzini;0;23
 112;Manuel Noferini;11;24
 113;Federico Guli;9;24
@@ -128,7 +128,7 @@
 128;Lorenzo Marsiglio;3;3
 129;Gabriele Buzzi;1;3
 130;Alberto Dello Russo;12;1
-131;Alessandro Zannoni;19;1
+131;Alessandro Zannoni;20;1
 132;Luca Marcucci;2;1
 133;Lorenzo Rossetti;11;1
 134;Giulio Cerrato;6;10
@@ -186,4 +186,4 @@
 186;Panzavolta;1;4
 187;Brighi;1;3
 188;Palazzi;1;8
-189;Calamosca;2;23
+189;Calamosca;3;23
