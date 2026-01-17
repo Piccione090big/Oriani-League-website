@@ -89,7 +89,7 @@
 89;Gabriele Franchini;0;20
 90;Gianpaolo Romeo;2;22
 91;David Kadji;1;22
-92;Giovanni Rametta;15;22
+92;Giovanni Rametta;16;22
 93;Leonardo Filipponi;4;22
 94;Giovanni Casadio;5;22
 95;Giorgio Tallevi;1;22
@@ -109,11 +109,11 @@
 109;Elia Manservisi;23;23
 110;Diego Zaccherini;8;23
 111;Alessandro Bergonzini;0;23
-112;Manuel Noferini;11;24
-113;Federico Guli;9;24
+112;Manuel Noferini;12;24
+113;Federico Guli;12;24
 114;Mattia Dal Pozzo;4;24
 115;Samuel Babini;6;24
-116;Giacomo Solaroli;16;24
+116;Giacomo Solaroli;19;24
 117;Simone Beleffi;4;24
 118;Leonardo Bezzi;0;25
 119;Telemaco Costantini;4;25
