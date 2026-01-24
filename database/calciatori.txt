@@ -4,10 +4,10 @@
 4;Emanuele Scandellari;0;16
 5;Emanuele Daisse;3;16
 6;Samuele Contessi;0;16
-7;Matteo Galli;0;18
-8;Francesco Fazi;9;18
+7;Matteo Galli;1;18
+8;Francesco Fazi;10;18
 9;Filippo Poverini;5;18
-10;Filippo Pattuelli;0;18
+10;Filippo Pattuelli;2;18
 11;Nicolò Sonnessa;2;18
 12;Matteo Minardi;5;18
 13;Orlando Andrini;12;18
@@ -89,7 +89,7 @@
 89;Gabriele Franchini;0;20
 90;Gianpaolo Romeo;2;22
 91;David Kadji;1;22
-92;Giovanni Rametta;16;22
+92;Giovanni Rametta;17;22
 93;Leonardo Filipponi;4;22
 94;Giovanni Casadio;5;22
 95;Giorgio Tallevi;1;22
@@ -101,16 +101,16 @@
 101;Ettore Mancanelli;0;4
 102;Simone Di Tizio;0;4
 103;Rayan Er Rasouji;0;4
-104;Giacomo Parmiani;2;23
-105;Christian Curci;4;23
+104;Giacomo Parmiani;5;23
+105;Christian Curci;5;23
 106;Francesco Vicari;3;23
 107;Leonardo Dal Pozzo;7;23
-108;Giacomo Angiolini;11;23
-109;Elia Manservisi;23;23
-110;Diego Zaccherini;8;23
+108;Giacomo Angiolini;12;23
+109;Elia Manservisi;26;23
+110;Diego Zaccherini;9;23
 111;Alessandro Bergonzini;0;23
-112;Manuel Noferini;12;24
-113;Federico Guli;12;24
+112;Manuel Noferini;13;24
+113;Federico Guli;14;24
 114;Mattia Dal Pozzo;4;24
 115;Samuel Babini;6;24
 116;Giacomo Solaroli;19;24
